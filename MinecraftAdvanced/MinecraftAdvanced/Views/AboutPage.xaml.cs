@@ -3,12 +3,15 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
+using MinecraftAdvanced;
 
 namespace MinecraftAdvanced.Views
 {
     public partial class AboutPage : ContentPage
     {
         public List<Monkey> Monkeys { get; set; }
+        public List<string> Names { get; set; }
+        public GoogleHelper helper = new GoogleHelper();
         public AboutPage()
         {
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace MinecraftAdvanced.Views
                 Details = "Bozin"
             }
             );
+            Names = helper.ReadNames();
 
             this.BindingContext = this;
         }

@@ -63,6 +63,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <ListView
+              ItemsSource="{Binding Names}">
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
     
