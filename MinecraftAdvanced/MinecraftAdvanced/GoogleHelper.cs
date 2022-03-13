@@ -34,7 +34,7 @@ namespace MinecraftAdvanced
         }
         public List<string> ReadNames()
         {
-            var range = $"{sheet}!B2:B10";
+            var range = $"{sheet}!B2:B";
             var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
             var response = request.Execute();
             var values = response.Values;
