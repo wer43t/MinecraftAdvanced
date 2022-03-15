@@ -42,11 +42,15 @@
                     </StackLayout>
                 </ScrollView>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Топ карты"/>
-                        <Label Text="Смотреть все"/>
-                    </StackLayout>
-                    
+                    <ContentView HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Топ карты" Padding="5"/>
+                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660"/>
+                        </StackLayout>
+                    </ContentView>
+                    <ScrollView Orientation="Horizontal">
+                        <FlexLayout x:Name="MapsLayout"/>
+                    </ScrollView>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

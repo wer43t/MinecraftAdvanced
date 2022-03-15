@@ -18,6 +18,10 @@ namespace MinecraftAdvanced.Views
         {
             InitializeComponent();
             Buildings = helper.GetBuildings().GetRange(0, 4);
+            foreach (var building in Buildings)
+            {
+                MapsLayout.Children.Add(new Image() {Source = building.Image });
+            }
             
 
 
