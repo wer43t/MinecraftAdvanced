@@ -13,26 +13,9 @@ namespace MinecraftAdvanced
 {
     public class GoogleHelper
     {
-        static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
-        static readonly string ApplicatiomName = "MinecraftAdvanced";
-        static readonly string SpreadsheetId = "1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc";
-        static readonly string sheet = "names";
-        static SheetsService service;
         public GoogleHelper()
         {
-            GoogleCredential credential;
-            var assembly = Assembly.GetExecutingAssembly();
-            string path = @"MinecraftAdvanced.client_secrets.json";
-
-            using (Stream stream = assembly.GetManifestResourceStream(path))
-            {
-                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
-            }
-            service = new SheetsService(new BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                ApplicationName = ApplicatiomName
-            });
+            
         }
         public List<Building> GetBuildings()
         {
@@ -50,6 +33,5 @@ namespace MinecraftAdvanced
             var buildings = JsonConvert.DeserializeObject<List<Building>>(json);
             return buildings;
         }
-
     }
 }

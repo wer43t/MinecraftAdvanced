@@ -31,5 +31,10 @@ namespace MinecraftAdvanced.Views
         {
             
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            DisplayAlert("Ты","Тыкнул", "Да");
+        }
     }
 }

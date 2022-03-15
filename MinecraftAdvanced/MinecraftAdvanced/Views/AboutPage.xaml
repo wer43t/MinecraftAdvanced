@@ -8,6 +8,13 @@
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem>
+            <ToolbarItem.Parent>
+                <SearchBar Placeholder="Search" Text="{Binding Filter}" />
+            </ToolbarItem.Parent>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <Style TargetType="Button">
             <Setter Property="WidthRequest" Value="130"/>
@@ -45,7 +52,11 @@
                     <ContentView HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Топ карты" Padding="5"/>
-                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660"/>
+                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
                         </StackLayout>
                     </ContentView>
                     <ScrollView Orientation="Horizontal">
