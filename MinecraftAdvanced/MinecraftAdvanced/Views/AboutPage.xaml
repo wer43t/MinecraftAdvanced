@@ -2,19 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MinecraftAdvanced.Views.AboutPage"
-             xmlns:vm="clr-namespace:MinecraftAdvanced.ViewModels"
-             Title="{Binding Title}">
-
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem>
-            <ToolbarItem.Parent>
-                <SearchBar Placeholder="Search" Text="{Binding Filter}" />
-            </ToolbarItem.Parent>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
+             xmlns:vm="clr-namespace:MinecraftAdvanced.ViewModels">
+    
+    <Shell.TitleView>
+        <SearchBar Placeholder="Поиск" TextColor="White"/>
+    </Shell.TitleView>
     <ContentPage.Resources>
         <Style TargetType="Button">
             <Setter Property="WidthRequest" Value="130"/>
@@ -48,6 +40,7 @@
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
+                
                 <StackLayout>
                     <ContentView HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal">
@@ -61,6 +54,69 @@
                     </ContentView>
                     <ScrollView Orientation="Horizontal">
                         <FlexLayout x:Name="MapsLayout"/>
+                    </ScrollView>
+                </StackLayout>
+                
+                <StackLayout>
+                    <ContentView HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Топ постройки" Padding="5"/>
+                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </ContentView>
+                    <ScrollView Orientation="Horizontal">
+                        <FlexLayout x:Name="BuildingsLayout"/>
+                    </ScrollView>
+                </StackLayout>
+                
+                <StackLayout>
+                    <ContentView HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Топ аддоны" Padding="5"/>
+                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </ContentView>
+                    <ScrollView Orientation="Horizontal">
+                        <FlexLayout x:Name="AddonsLayout"/>
+                    </ScrollView>
+                </StackLayout>
+                
+                <StackLayout>
+                    <ContentView HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Топ текстуры" Padding="5"/>
+                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </ContentView>
+                    <ScrollView Orientation="Horizontal">
+                        <FlexLayout x:Name="TexturesLayout"/>
+                    </ScrollView>
+                </StackLayout>
+                <StackLayout>
+                    <ContentView HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Топ скины" Padding="5"/>
+                            <Label Text="Смотреть все" HorizontalOptions="EndAndExpand" Padding="5" TextColor="#5AA660">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </ContentView>
+                    <ScrollView Orientation="Horizontal">
+                        <FlexLayout x:Name="SkinsLayout"/>
                     </ScrollView>
                 </StackLayout>
             </StackLayout>

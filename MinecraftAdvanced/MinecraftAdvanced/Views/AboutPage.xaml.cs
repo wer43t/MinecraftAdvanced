@@ -17,19 +17,34 @@ namespace MinecraftAdvanced.Views
         public AboutPage()
         {
             InitializeComponent();
-            Buildings = helper.GetBuildings().GetRange(0, 4);
-            foreach (var building in Buildings)
-            {
-                MapsLayout.Children.Add(new Image() {Source = building.Image });
-            }
-            
 
+            Buildings = helper.GetBuildings().GetRange(0, 4);
+            FillTops();
 
             this.BindingContext = this;
         }
-        public void PrepareButtons()
+        public void FillTops()
         {
-            
+            foreach (var building in Buildings)
+            {
+                MapsLayout.Children.Add(new Image() { Source = building.Image });
+            }
+            foreach (var building in Buildings)
+            {
+                BuildingsLayout.Children.Add(new Image() { Source = building.Image });
+            }
+            foreach (var building in Buildings)
+            {
+                AddonsLayout.Children.Add(new Image() { Source = building.Image });
+            }
+            foreach (var building in Buildings)
+            {
+                TexturesLayout.Children.Add(new Image() { Source = building.Image });
+            }
+            foreach (var building in Buildings)
+            {
+                SkinsLayout.Children.Add(new Image() { Source = building.Image });
+            }
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
