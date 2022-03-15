@@ -4,70 +4,51 @@
              x:Class="MinecraftAdvanced.Views.AboutPage"
              xmlns:vm="clr-namespace:MinecraftAdvanced.ViewModels"
              Title="{Binding Title}">
-    
+
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="WidthRequest" Value="130"/>
+            <Setter Property="HeightRequest" Value="50"/>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <CarouselView ItemsSource="{Binding Monkeys}" PeekAreaInsets="100">
+        <ScrollView>
+            <StackLayout>
+            <CarouselView ItemsSource="{Binding Buildings}" HeightRequest="150">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame HasShadow="True"
-                       BorderColor="DarkGray"
-                       CornerRadius="5"
-                       Margin="0"
-                       HeightRequest="300"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand">
-                                <StackLayout>
-                                    <Label Text="{Binding Name}"
-                               FontAttributes="Bold"
-                               FontSize="Large"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center" />
-                                    <Image Source="{Binding ImageUrl}"
-                               Aspect="AspectFill"
-                               HeightRequest="150"
-                               WidthRequest="150"
-                               HorizontalOptions="Center" />
-                                    <Label Text="{Binding Location}"
-                               HorizontalOptions="Center" />
-                                    <Label Text="{Binding Details}"
-                               FontAttributes="Italic"
-                               HorizontalOptions="Center"
-                               MaxLines="5"
-                               LineBreakMode="TailTruncation" />
-                                </StackLayout>
-                            </Frame>
+                            <Image Source="{Binding Image}" 
+                               Aspect="AspectFill" />
                         </StackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-            <ListView x:Name="MessagesListView"
-              ItemsSource="{Binding Monkeys}"
-                      HasUnevenRows="True"
-              RowHeight="400"
-              WidthRequest="240"
-              SeparatorVisibility="None"
-              Rotation="270"
-              HorizontalOptions="Center">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ContentView Rotation="90" Padding="12">
-                                <Image Source="{Binding ImageUrl}" Aspect="AspectFill" />
-                            </ContentView>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView
-              ItemsSource="{Binding Names}">
-            </ListView>
-        </StackLayout>
+                <ScrollView Orientation="Horizontal" >
+                    <StackLayout >
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text = "Карты" BackgroundColor="#4DAAF4"/>
+                            <Button Text = "Аддоны" BackgroundColor="#FFC018"/>
+                            <Button Text = "Текстуры" BackgroundColor="#7A4DCF"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text = "Постройки" BackgroundColor="#F25E9F"/>
+                            <Button Text = "Скины" BackgroundColor="#F78C39"/>
+                            <Button Text = "Сиды" BackgroundColor="#C0775B"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Топ карты"/>
+                        <Label Text="Смотреть все"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
-    
-
 </ContentPage>

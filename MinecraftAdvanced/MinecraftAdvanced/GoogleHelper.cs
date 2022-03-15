@@ -1,9 +1,11 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Text;
 
@@ -32,21 +34,21 @@ namespace MinecraftAdvanced
                 ApplicationName = ApplicatiomName
             });
         }
-        public List<string> ReadNames()
+        public List<Building> GetBuildings()
         {
-            var range = $"{sheet}!B2:B";
-            var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
-            var response = request.Execute();
-            var values = response.Values;
-            var result = new List<string>();
-            if (values != null && values.Count > 0)
+            WebRequest request = WebRequest.Create("https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/2");
+            WebResponse response = request.GetResponse();
+            string json;
+
+            using (Stream stream = response.GetResponseStream())
             {
-                foreach (var row in values)
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    result.Add(row[0].ToString());
+                    json = reader.ReadToEnd();
                 }
             }
-            return result;
+            var buildings = JsonConvert.DeserializeObject<List<Building>>(json);
+            return buildings;
         }
 
     }
