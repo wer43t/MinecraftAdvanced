@@ -29,7 +29,7 @@
                 <ScrollView Orientation="Horizontal" >
                     <StackLayout >
                         <StackLayout Orientation="Horizontal">
-                            <Button Text = "Карты" BackgroundColor="#4DAAF4"/>
+                            <Button Text = "Карты" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
                             <Button Text = "Аддоны" BackgroundColor="#FFC018"/>
                             <Button Text = "Текстуры" BackgroundColor="#7A4DCF"/>
                         </StackLayout>

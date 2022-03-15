@@ -51,5 +51,10 @@ namespace MinecraftAdvanced.Views
         {
             DisplayAlert("Ты","Тыкнул", "Да");
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SelectTypePage());
+        }
     }
 }
