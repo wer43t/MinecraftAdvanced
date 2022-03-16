@@ -19,7 +19,7 @@ namespace MinecraftAdvanced
         }
         public List<Building> GetBuildings()
         {
-            WebRequest request = WebRequest.Create("https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/2");
+            WebRequest request = WebRequest.Create("https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/buildings_catalog");
             WebResponse response = request.GetResponse();
             string json;
 

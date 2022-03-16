@@ -16,9 +16,19 @@ namespace MinecraftAdvanced
         [JsonProperty("path")]
         public string Path { get; set; }
         [JsonProperty("short_description")]
-        public string Description { get; set; }
+        public string ShortDescription { get; set; }
         [JsonProperty("title")]
         public string Title { get; set; }
+        [JsonProperty("capacity")]
+        public int? Capacity { get; set; }
+        [JsonProperty("download_url")]
+        public string DownloadUrl { get; set; }
+        [JsonProperty("resources_id")]
+        public string Resources { get; set; }
+        [JsonProperty("size")]
+        public string Size { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
 
         public override bool Equals(object obj)
         {
