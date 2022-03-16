@@ -72,6 +72,19 @@
             </Style>
         </ResourceDictionary>
     </Shell.Resources>
+    <Shell.FlyoutHeader>
+        <StackLayout Padding="25" BackgroundColor="#7DCA64">
+            <Image Source="Diamond.png" HeightRequest="40" HorizontalOptions="Start" />
+            <Label
+                    Margin="0,2,0,0"
+                    FontSize="20"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Minecraft Advanced"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+
+        </StackLayout>
+    </Shell.FlyoutHeader>
 
     <FlyoutItem Title="Главная" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
