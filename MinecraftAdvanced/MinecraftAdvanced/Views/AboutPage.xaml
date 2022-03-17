@@ -20,7 +20,7 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Image Source="{Binding Image}" 
+                            <Image Source="{Binding ImagePath}" 
                                Aspect="AspectFill" />
                         </StackLayout>
                     </DataTemplate>
