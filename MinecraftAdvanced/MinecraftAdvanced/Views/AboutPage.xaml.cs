@@ -9,6 +9,7 @@ namespace MinecraftAdvanced.Views
 {
     public partial class AboutPage : ContentPage
     {
+        public string[] sheetNames = new string[] { "mods_catalog", "maps_catalog" };
         public List<Building> Buildings { get; set; }
         public List<string> Names { get; set; }
         public GoogleHelper helper = new GoogleHelper();

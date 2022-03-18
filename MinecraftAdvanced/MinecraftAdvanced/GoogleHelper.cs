@@ -33,5 +33,22 @@ namespace MinecraftAdvanced
             var buildings = JsonConvert.DeserializeObject<List<Building>>(json);
             return buildings;
         }
+
+        public List<Mod> GetMods()
+        {
+            WebRequest request = WebRequest.Create("https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/mods_catalog");
+            WebResponse response = request.GetResponse();
+            string json;
+
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    json = reader.ReadToEnd();
+                }
+            }
+            var buildings = JsonConvert.DeserializeObject<List<Mod>>(json);
+            return buildings;
+        }
     }
 }
