@@ -13,7 +13,6 @@ namespace MinecraftAdvanced
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
