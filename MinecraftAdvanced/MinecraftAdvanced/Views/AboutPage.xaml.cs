@@ -20,6 +20,7 @@ namespace MinecraftAdvanced.Views
 
             Buildings = helper.GetBuildings().GetRange(0, 4);
             FillTops();
+            helper.PostFavourite();
 
             this.BindingContext = this;
         }

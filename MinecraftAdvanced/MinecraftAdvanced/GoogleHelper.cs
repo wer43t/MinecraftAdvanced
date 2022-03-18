@@ -8,14 +8,32 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using Google.Apis.Sheets.v4.Data;
 
 namespace MinecraftAdvanced
 {
     public class GoogleHelper
     {
+        static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
+        static readonly string ApplicatiomName = "MinecraftAdvanced";
+        static readonly string SpreadsheetId = "1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc";
+        static readonly string sheet = "names";
+        static SheetsService service;
         public GoogleHelper()
         {
-            
+            GoogleCredential credential;
+            var assembly = Assembly.GetExecutingAssembly();
+            string path = @"MinecraftAdvanced.client_secrets.json";
+
+            using (Stream stream = assembly.GetManifestResourceStream(path))
+            {
+                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
+            }
+            service = new SheetsService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = ApplicatiomName
+            });
         }
         public List<Building> GetBuildings()
         {
@@ -32,6 +50,25 @@ namespace MinecraftAdvanced
             }
             var buildings = JsonConvert.DeserializeObject<List<Building>>(json);
             return buildings;
+        }
+        public void PostFavourite()
+        {
+            string range = "favourites!A1";
+            
+            var requestBody = new ValueRange();
+            var objectList = new List<object> {111, "fwfw" };
+
+            requestBody.Values = new List<IList<object>> { objectList };
+
+            SpreadsheetsResource.ValuesResource.UpdateRequest request = service.Spreadsheets.Values.Update(requestBody, SpreadsheetId, range);
+            request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
+
+            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
+            var response = request.Execute();
+            // Data.UpdateValuesResponse response = await request.ExecuteAsync();
+
+            // TODO: Change code below to process the `response` object:
+            Console.WriteLine(JsonConvert.SerializeObject(response));
         }
     }
 }
