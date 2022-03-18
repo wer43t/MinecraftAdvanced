@@ -53,7 +53,7 @@ namespace MinecraftAdvanced
         }
         public void PostFavourite()
         {
-            string range = "favourites!A1";
+            string range = "favourites!A2";
             
             var requestBody = new ValueRange();
             var objectList = new List<object> {111, "fwfw" };
@@ -63,11 +63,8 @@ namespace MinecraftAdvanced
             SpreadsheetsResource.ValuesResource.UpdateRequest request = service.Spreadsheets.Values.Update(requestBody, SpreadsheetId, range);
             request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
 
-            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
             var response = request.Execute();
-            // Data.UpdateValuesResponse response = await request.ExecuteAsync();
 
-            // TODO: Change code below to process the `response` object:
             Console.WriteLine(JsonConvert.SerializeObject(response));
         }
     }
