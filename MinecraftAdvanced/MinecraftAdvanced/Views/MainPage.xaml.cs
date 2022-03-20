@@ -9,7 +9,6 @@ namespace MinecraftAdvanced.Views
 {
     public partial class MainPage : ContentPage
     {
-        
         public List<Item> Buildings { get; set; }
         public List<string> Names { get; set; }
         public GoogleHelper helper = new GoogleHelper();
@@ -56,7 +55,7 @@ namespace MinecraftAdvanced.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SelectTypePage());
+            Navigation.PushAsync(new SelectTypePage((sender as Button).Text));
         }
     }
 }

@@ -11,7 +11,7 @@ namespace MinecraftAdvanced
     public partial class App : Application
     {
         public GoogleHelper helper;
-        public Dictionary<string, List<Item>> DataStorage = new Dictionary<string, List<Item>>
+        public static Dictionary<string, List<Item>> DataStorage = new Dictionary<string, List<Item>>
         {
             {"Карты",     new List<Item>()},
             {"Аддоны",    new List<Item>()},
@@ -20,7 +20,7 @@ namespace MinecraftAdvanced
             {"Скины",     new List<Item>()},
             {"Сиды",      new List<Item>()}
         };
-        public Dictionary<string, string> sheetNames = new Dictionary<string, string>
+        public static Dictionary<string, string> sheetNames = new Dictionary<string, string>
         {
             {"Карты",       "maps_catalog"},
             {"Аддоны",      ""},

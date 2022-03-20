@@ -12,10 +12,10 @@ namespace MinecraftAdvanced.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SelectTypePage : TabbedPage
     {
-        public SelectTypePage ()
+        public SelectTypePage (string itemsName)
         {
             InitializeComponent();
-            Children.Add(new ItemsPage());
+            Children.Add(new ItemsPage(itemsName));
         }
     }
 }

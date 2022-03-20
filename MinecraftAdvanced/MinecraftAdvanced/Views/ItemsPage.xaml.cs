@@ -14,10 +14,14 @@ namespace MinecraftAdvanced.Views
 {
     public partial class ItemsPage : ContentPage
     {
+        public List<Item> Items { get; set; }
 
-        public ItemsPage()
+        public ItemsPage(string itemsName)
         {
             InitializeComponent();
+            Items = App.DataStorage[itemsName];
+            Title = "Items";
+            BindingContext = this;
 
         }
 
