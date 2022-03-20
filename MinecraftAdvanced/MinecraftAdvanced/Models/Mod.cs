@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MinecraftAdvanced.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
-namespace MinecraftAdvanced
+namespace MinecraftAdvanced.Models
 {
     public class Mod : Item
     {

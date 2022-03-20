@@ -87,7 +87,7 @@
     </Shell.FlyoutHeader>
 
     <FlyoutItem Title="Главная" Icon="icon_about.png">
-        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Избранное" Icon="icon_about.png">
         <ShellContent Route="FavouritesPage" ContentTemplate="{DataTemplate local:FavouritesPage}" />

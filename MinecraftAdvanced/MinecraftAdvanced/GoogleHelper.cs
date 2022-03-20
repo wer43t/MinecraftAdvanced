@@ -9,6 +9,7 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using Google.Apis.Sheets.v4.Data;
+using MinecraftAdvanced.Models;
 
 namespace MinecraftAdvanced
 {
@@ -35,9 +36,9 @@ namespace MinecraftAdvanced
                 ApplicationName = ApplicatiomName
             });
         }
-        public List<Building> GetBuildings()
+        public List<Item> GetItems(string sheetName)
         {
-            WebRequest request = WebRequest.Create("https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/buildings_catalog");
+            WebRequest request = WebRequest.Create($"https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/" + sheetName);
             WebResponse response = request.GetResponse();
             string json;
 
@@ -48,8 +49,7 @@ namespace MinecraftAdvanced
                     json = reader.ReadToEnd();
                 }
             }
-            var buildings = JsonConvert.DeserializeObject<List<Building>>(json);
-            return buildings;
+            return JsonConvert.DeserializeObject<List<Item>>(json);
         }
         public void PostFavourite()
         {

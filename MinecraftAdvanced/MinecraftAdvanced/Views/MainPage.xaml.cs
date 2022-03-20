@@ -3,23 +3,23 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
-using MinecraftAdvanced;
+using MinecraftAdvanced.Models;
 
 namespace MinecraftAdvanced.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public string[] sheetNames = new string[] { "mods_catalog", "maps_catalog" };
-        public List<Building> Buildings { get; set; }
+        
+        public List<Item> Buildings { get; set; }
         public List<string> Names { get; set; }
         public GoogleHelper helper = new GoogleHelper();
         public List<Button> Buttons { get; set; }
 
-        public AboutPage()
+        public MainPage()
         {
             InitializeComponent();
 
-            Buildings = helper.GetBuildings().GetRange(0, 4);
+            Buildings = helper.GetItems("buildings_catalog").GetRange(0, 4);
             FillTops();
             helper.PostFavourite();
 

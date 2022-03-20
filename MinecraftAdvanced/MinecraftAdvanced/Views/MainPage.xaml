@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MinecraftAdvanced.Views.AboutPage"
+             x:Class="MinecraftAdvanced.Views.MainPage"
              xmlns:vm="clr-namespace:MinecraftAdvanced.ViewModels">
     
     <Shell.TitleView>
@@ -36,13 +36,13 @@
                     <StackLayout >
                         <StackLayout Orientation="Horizontal">
                             <Button Text = "Карты" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
-                            <Button Text = "Аддоны" BackgroundColor="#FFC018"/>
-                            <Button Text = "Текстуры" BackgroundColor="#7A4DCF"/>
+                            <Button Text = "Аддоны" BackgroundColor="#FFC018" Clicked="Button_Clicked"/>
+                            <Button Text = "Текстуры" BackgroundColor="#7A4DCF" Clicked="Button_Clicked"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Button Text = "Постройки" BackgroundColor="#F25E9F"/>
-                            <Button Text = "Скины" BackgroundColor="#F78C39"/>
-                            <Button Text = "Сиды" BackgroundColor="#C0775B"/>
+                            <Button Text = "Постройки" BackgroundColor="#F25E9F" Clicked="Button_Clicked"/>
+                            <Button Text = "Скины" BackgroundColor="#F78C39" Clicked="Button_Clicked"/>
+                            <Button Text = "Сиды" BackgroundColor="#C0775B" Clicked="Button_Clicked"/>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

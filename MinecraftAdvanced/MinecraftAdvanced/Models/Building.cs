@@ -4,7 +4,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
-namespace MinecraftAdvanced
+namespace MinecraftAdvanced.Models
 {
     public class Building
     {
@@ -38,9 +38,9 @@ namespace MinecraftAdvanced
         [JsonProperty("description")]
         public string Description { get; set; }
 
-        public override bool Equals(object obj)
-        {
-            return Id == (obj as Building).Id;
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return Id == (obj as Building).Id;
+        //}
     }
 }
