@@ -38,18 +38,25 @@ namespace MinecraftAdvanced
         }
         public List<Item> GetItems(string sheetName)
         {
-            WebRequest request = WebRequest.Create($"https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/" + sheetName);
-            WebResponse response = request.GetResponse();
-            string json;
-
-            using (Stream stream = response.GetResponseStream())
+            try
             {
-                using (StreamReader reader = new StreamReader(stream))
+                WebRequest request = WebRequest.Create($"https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/" + sheetName);
+                WebResponse response = request.GetResponse();
+                string json;
+
+                using (Stream stream = response.GetResponseStream())
                 {
-                    json = reader.ReadToEnd();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        json = reader.ReadToEnd();
+                    }
                 }
+                return JsonConvert.DeserializeObject<List<Item>>(json);
             }
-            return JsonConvert.DeserializeObject<List<Item>>(json);
+            catch
+            {
+                return new List<Item>();
+            }
         }
         public void PostFavourite()
         {
@@ -67,7 +74,5 @@ namespace MinecraftAdvanced
 
             Console.WriteLine(JsonConvert.SerializeObject(response));
         }
-
-
     }
 }

@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace MinecraftAdvanced.Models
 {
-    public abstract class Item
+    public class Item
     {
         [JsonProperty("id")]
         public int Id { get; set; }

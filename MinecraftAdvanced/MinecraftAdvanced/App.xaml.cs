@@ -34,16 +34,17 @@ namespace MinecraftAdvanced
             InitializeComponent();
 
             MainPage = new AppShell();
-        }
-
-        protected override void OnStart()
-        {
             helper = new GoogleHelper();
 
             foreach (var key in sheetNames.Keys)
             {
                 DataStorage[key] = helper.GetItems(sheetNames[key]);
             }
+        }
+
+        protected override void OnStart()
+        {
+            
         }
 
         protected override void OnSleep()
