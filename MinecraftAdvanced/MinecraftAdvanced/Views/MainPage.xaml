@@ -16,22 +16,24 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <CarouselView ItemsSource="{Binding Buildings}" HeightRequest="150" IndicatorView="indicatorView">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Image Source="{Binding ImagePath}" 
-                               Aspect="AspectFill" />
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-                <IndicatorView x:Name="indicatorView"
+                <StackLayout Padding="0, 0, 0, 10">
+                    <CarouselView ItemsSource="{Binding Buildings}" HeightRequest="150" WidthRequest="150" IndicatorView="indicatorView">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image Source="{Binding ImagePath}" HeightRequest="150" 
+                               Aspect="Fill" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView x:Name="indicatorView"
                    Margin="0,0,0,0"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="black"
                    HorizontalOptions="Center">
-                </IndicatorView>
+                    </IndicatorView>
+                </StackLayout>
                 <ScrollView Orientation="Horizontal" >
                     <StackLayout >
                         <StackLayout Orientation="Horizontal">
