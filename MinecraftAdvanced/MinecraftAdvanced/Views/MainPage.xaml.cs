@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using MinecraftAdvanced.Models;
+using System.Linq;
 
 namespace MinecraftAdvanced.Views
 {
@@ -50,12 +51,15 @@ namespace MinecraftAdvanced.Views
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            DisplayAlert("Ты","Тыкнул", "Да");
+            var topLabel = (((sender as Label).Parent as StackLayout).Children.Where(x => x is Label).Where(y => (y as Label).Text.Contains("Топ")).FirstOrDefault() as Label);
+            var itemsName = topLabel.Text.Split(' ')[1];
+
+            Navigation.PushAsync(new SelectTypePage(itemsName));
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SelectTypePage((sender as Button).Text));
+            Navigation.PushAsync(new SelectTypePage((sender as Button).Text.ToLower()));
         }
     }
 }

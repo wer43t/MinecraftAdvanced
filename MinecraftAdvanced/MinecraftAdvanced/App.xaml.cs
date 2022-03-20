@@ -13,21 +13,21 @@ namespace MinecraftAdvanced
         public GoogleHelper helper;
         public static Dictionary<string, List<Item>> DataStorage = new Dictionary<string, List<Item>>
         {
-            {"Карты",     new List<Item>()},
-            {"Аддоны",    new List<Item>()},
-            {"Текстуры",  new List<Item>()},
-            {"Постройки", new List<Item>()},
-            {"Скины",     new List<Item>()},
-            {"Сиды",      new List<Item>()}
+            {"карты",     new List<Item>()},
+            {"аддоны",    new List<Item>()},
+            {"текстуры",  new List<Item>()},
+            {"постройки", new List<Item>()},
+            {"скины",     new List<Item>()},
+            {"сиды",      new List<Item>()}
         };
         public static Dictionary<string, string> sheetNames = new Dictionary<string, string>
         {
-            {"Карты",       "maps_catalog"},
-            {"Аддоны",      ""},
-            {"Текстуры",    "textures_catalog"},
-            {"Постройки",   "buildings_catalog"},
-            {"Скины",       ""},
-            {"Сиды",        ""}
+            {"карты",       "maps_catalog"},
+            {"аддоны",      ""},
+            {"текстуры",    "textures_catalog"},
+            {"постройки",   "buildings_catalog"},
+            {"скины",       ""},
+            {"сиды",        ""}
         };
         public App()
         {
