@@ -1,10 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MinecraftAdvanced.Views.SelectedItemPage">
+             x:Class="MinecraftAdvanced.Views.SelectedItemPage"
+             Title="{Binding Title}"
+             Visual="Material">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="{Binding ImagePath}"/>
+            
+            <Image Source="{Binding ImagePath}" Aspect="AspectFill" HeightRequest="200"/>
+            <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="0,-30,20,0" >
+                <Button x:Name="btnLike"
+                        Text="&#xe87e;" 
+                        FontFamily="IconsFont" 
+                        TextColor="white" 
+                        FontSize="30" 
+                        BackgroundColor="#3CC85B" 
+                        CornerRadius="50" 
+                        WidthRequest="50" 
+                        HeightRequest="50"
+                        BorderColor="Red"
+                        BorderWidth="3"
+                        Clicked="btnLike_Clicked"/>
+            </StackLayout>
+
             <Label Text="{Binding Title}"/>
             <Button Text="Скачать" BackgroundColor="#AD1B23" TextColor="white" FontSize="36"/>
             <Label Text="{Binding Description}"/>

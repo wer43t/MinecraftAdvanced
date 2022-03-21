@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using MinecraftAdvanced.Models;
 
+[assembly: ExportFont("MaterialIcons-Regular.ttf", Alias = "IconsFont")]
 namespace MinecraftAdvanced
 {
     public partial class App : Application

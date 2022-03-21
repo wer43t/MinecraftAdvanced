@@ -18,5 +18,10 @@ namespace MinecraftAdvanced.Views
             InitializeComponent();
             BindingContext = selectedItem;
         }
+
+        private void btnLike_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
