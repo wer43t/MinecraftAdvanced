@@ -21,7 +21,6 @@ namespace MinecraftAdvanced.Views
 
             Buildings = App.DataStorage["постройки"].GetRange(0, 4);
             FillTops();
-            helper.PostFavourite();
 
             this.BindingContext = this;
         }

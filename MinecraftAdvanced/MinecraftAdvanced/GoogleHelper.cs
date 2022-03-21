@@ -58,12 +58,12 @@ namespace MinecraftAdvanced
                 return new List<Item>();
             }
         }
-        public void PostFavourite()
+        public void PostFavourite(FavouriteItem FI)
         {
-            string range = "favourites!A2";
+            string range = $"favourites!A{GetFavourites().Count + 2}";
             
             var requestBody = new ValueRange();
-            var objectList = new List<object> {1211, "fwfw" };
+            var objectList = new List<object> {FI.Id, FI.userLogin, FI.Image, FI.Path, FI.Title, FI.Description, FI.DownloadUrl };
 
             requestBody.Values = new List<IList<object>> { objectList };
 
@@ -71,8 +71,44 @@ namespace MinecraftAdvanced
             request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
 
             var response = request.Execute();
+        }
+        public List<FavouriteItem> GetFavourites()
+        {
+            try
+            {
+                WebRequest request = WebRequest.Create($"https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/favourites");
+                WebResponse response = request.GetResponse();
+                string json;
 
-            Console.WriteLine(JsonConvert.SerializeObject(response));
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        json = reader.ReadToEnd();
+                    }
+                }
+                return JsonConvert.DeserializeObject<List<FavouriteItem>>(json);
+            }
+            catch (Exception ex)
+            {
+                return new List<FavouriteItem>();
+            }
+        }
+        public void DeleteFavourite(FavouriteItem FI)
+        {
+            var favourites = GetFavourites();
+
+            string range = $"favourites!A{favourites.IndexOf(favourites.Find(x => x.Id == FI.Id)) + 2}";
+
+            var requestBody = new ValueRange();
+            var objectList = new List<object> { "", "", "", "", "", "", ""};
+
+            requestBody.Values = new List<IList<object>> { objectList };
+
+            SpreadsheetsResource.ValuesResource.UpdateRequest request = service.Spreadsheets.Values.Update(requestBody, SpreadsheetId, range);
+            request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
+
+            var response = request.Execute();
         }
     }
 }

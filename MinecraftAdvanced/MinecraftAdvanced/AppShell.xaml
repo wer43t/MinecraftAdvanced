@@ -86,14 +86,12 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Главная" Icon="icon_about.png">
+    <FlyoutItem Title="Главная" Icon="icon_about.png" >
         <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Избранное" Icon="icon_about.png">
-        <ShellContent Route="FavouritesPage" ContentTemplate="{DataTemplate local:FavouritesPage}" />
-    </FlyoutItem>
+    </FlyoutItem> 
 
-    <MenuItem Text="Категории"/>
+    <MenuItem Text="Избранное" Clicked="OnMenuItemClicked"/>
+    <MenuItem Text="Категории" />
 
     <FlyoutItem Title="Карты" Icon="icon_feed.png">
         <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}"/>

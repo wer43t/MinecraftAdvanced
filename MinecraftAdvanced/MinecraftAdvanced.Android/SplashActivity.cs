@@ -13,7 +13,7 @@ using Android.Animation;
 
 namespace MinecraftAdvanced.Droid
 {
-    [Activity(Theme = "@style/Theme.Splash", Label = "SplashActivity", MainLauncher =true, NoHistory =true)]
+    [Activity(Theme = "@style/Theme.Splash", Label = "Minecraft Advanced", MainLauncher =true, NoHistory =true)]
     public class SplashActivity : Activity, Animator.IAnimatorListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
