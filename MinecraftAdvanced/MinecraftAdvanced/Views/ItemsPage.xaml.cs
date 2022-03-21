@@ -29,5 +29,10 @@ namespace MinecraftAdvanced.Views
         {
             base.OnAppearing();
         }
+
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            await Navigation.PushAsync(new SelectedItemPage(lvItems.SelectedItem as Item));
+        }
     }
 }

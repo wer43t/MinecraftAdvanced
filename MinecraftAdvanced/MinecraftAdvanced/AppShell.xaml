@@ -96,7 +96,7 @@
     <MenuItem Text="Категории"/>
 
     <FlyoutItem Title="Карты" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
+        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}"/>
     </FlyoutItem>
     <FlyoutItem Title="Аддоны" Icon="icon_feed.png">
         <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />

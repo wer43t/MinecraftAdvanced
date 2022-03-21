@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MinecraftAdvanced.Models;
 
 namespace MinecraftAdvanced.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SelectTypePage : TabbedPage
+    public partial class SelectedItemPage : ContentPage
     {
-        public SelectTypePage()
+        public SelectedItemPage(Item selectedItem)
         {
             InitializeComponent();
-        }
-        public SelectTypePage (string itemsName)
-        {
-            InitializeComponent();
-            Children.Add(new ItemsPage(itemsName));
+            BindingContext = selectedItem;
         }
     }
 }

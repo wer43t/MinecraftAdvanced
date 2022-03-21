@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinecraftAdvanced.Views.SelectedItemPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding ImagePath}"/>
+            <Label Text="{Binding Title}"/>
+            <Button Text="Скачать" BackgroundColor="#AD1B23" TextColor="white" FontSize="36"/>
+            <Label Text="{Binding Description}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

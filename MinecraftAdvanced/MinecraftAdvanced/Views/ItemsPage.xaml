@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:MinecraftAdvanced.ViewModels"  
              xmlns:model="clr-namespace:MinecraftAdvanced.Models"  
              x:Name="BrowseItemsPage">
-    <ListView ItemsSource="{Binding Items}" HasUnevenRows="True">
+    <ListView ItemsSource="{Binding Items}" x:Name="lvItems" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
