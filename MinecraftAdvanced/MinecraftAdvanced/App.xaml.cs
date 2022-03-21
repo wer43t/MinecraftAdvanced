@@ -23,11 +23,11 @@ namespace MinecraftAdvanced
         public static Dictionary<string, string> sheetNames = new Dictionary<string, string>
         {
             {"карты",       "maps_catalog"},
-            {"аддоны",      ""},
+            {"аддоны",      "mods_catalog"},
             {"текстуры",    "textures_catalog"},
             {"постройки",   "buildings_catalog"},
             {"скины",       ""},
-            {"сиды",        ""}
+            {"сиды",        "seeds_catalog"}
         };
         public App()
         {

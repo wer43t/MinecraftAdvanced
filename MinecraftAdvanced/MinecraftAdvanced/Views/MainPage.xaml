@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:MinecraftAdvanced.ViewModels">
     
     <Shell.TitleView>
-        <SearchBar Placeholder="Поиск" TextColor="White"/>
+        <SearchBar Placeholder="Поиск" TextColor="White" Focused="SearchBar_Focused"/>
     </Shell.TitleView>
     <ContentPage.Resources>
         <Style TargetType="Button">

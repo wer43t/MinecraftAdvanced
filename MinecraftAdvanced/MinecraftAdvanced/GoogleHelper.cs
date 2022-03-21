@@ -63,7 +63,7 @@ namespace MinecraftAdvanced
             string range = "favourites!A2";
             
             var requestBody = new ValueRange();
-            var objectList = new List<object> {111, "fwfw" };
+            var objectList = new List<object> {1211, "fwfw" };
 
             requestBody.Values = new List<IList<object>> { objectList };
 
