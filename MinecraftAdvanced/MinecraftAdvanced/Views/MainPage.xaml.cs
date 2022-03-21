@@ -19,7 +19,7 @@ namespace MinecraftAdvanced.Views
         {
             InitializeComponent();
 
-            Buildings = helper.GetItems("buildings_catalog").GetRange(0, 4);
+            Buildings = App.DataStorage["постройки"].GetRange(0, 4);
             FillTops();
             helper.PostFavourite();
 
