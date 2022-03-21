@@ -19,5 +19,10 @@ namespace MinecraftAdvanced
         {
             await Shell.Current.GoToAsync("//LoginPage");
         }
+
+        private async void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SelectTypePage((sender as MenuItem).Text.ToLower()));
+        }
     }
 }

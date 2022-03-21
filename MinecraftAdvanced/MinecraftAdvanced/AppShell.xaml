@@ -90,29 +90,17 @@
         <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Избранное" Icon="icon_about.png">
-        <ShellContent Route="FavouritesPage" ContentTemplate="{DataTemplate local:FavouritesPage}" />
+        <ShellContent Route="FavouritesPage" ContentTemplate="{DataTemplate local:FavouritesPage}"/>
     </FlyoutItem>
 
     <MenuItem Text="Категории"/>
 
-    <FlyoutItem Title="Карты" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Аддоны" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Текстуры" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Постройки" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Скины" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Сиды" Icon="icon_feed.png">
-        <ShellContent Route="SelectTypePage" ContentTemplate="{DataTemplate local:SelectTypePage}" />
-    </FlyoutItem>
+    <MenuItem Text="Карты" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Аддоны" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Текстуры" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Постройки" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Скины" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Сиды" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 
     <!--
