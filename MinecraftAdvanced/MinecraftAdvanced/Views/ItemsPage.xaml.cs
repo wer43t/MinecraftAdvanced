@@ -20,7 +20,7 @@ namespace MinecraftAdvanced.Views
         {
             InitializeComponent();
             Items = App.DataStorage[itemsName];
-            Title = "Items";
+            Title = itemsName;
             BindingContext = this;
 
         }
