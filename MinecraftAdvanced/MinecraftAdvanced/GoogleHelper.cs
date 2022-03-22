@@ -18,7 +18,6 @@ namespace MinecraftAdvanced
         static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
         static readonly string ApplicatiomName = "MinecraftAdvanced";
         static readonly string SpreadsheetId = "1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc";
-        static readonly string sheet = "names";
         static SheetsService service;
         public GoogleHelper()
         {
@@ -76,21 +75,34 @@ namespace MinecraftAdvanced
         {
             try
             {
-                WebRequest request = WebRequest.Create($"https://opensheet.elk.sh/1bJ2KdMGpcOX2xdDDixwyM2Rr7VmbqJd8JejbfavkHFc/favourites");
-                WebResponse response = request.GetResponse();
-                string json;
+                var result = new List<FavouriteItem>();
 
-                using (Stream stream = response.GetResponseStream())
+                var range = "favourites!A2:G";
+                var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
+                var response = request.Execute();
+
+                var values = response.Values;
+
+                foreach (var value in values)
                 {
-                    using (StreamReader reader = new StreamReader(stream))
+                    result.Add(new FavouriteItem
                     {
-                        json = reader.ReadToEnd();
-                    }
+                        Id = Convert.ToInt32(value[0]),
+                        userLogin = (string)value[1],
+                        Image = (string)value[2],
+                        Path = (string)value[3],
+                        Title = (string)value[4],
+                        Description = (string)value[5],
+                        DownloadUrl = (string)value[6],
+                    });
                 }
-                return JsonConvert.DeserializeObject<List<FavouriteItem>>(json);
+
+
+                return result;
             }
             catch (Exception ex)
             {
+                var e = ex.Message;
                 return new List<FavouriteItem>();
             }
         }
@@ -104,10 +116,8 @@ namespace MinecraftAdvanced
             var objectList = new List<object> { "", "", "", "", "", "", ""};
 
             requestBody.Values = new List<IList<object>> { objectList };
-
             SpreadsheetsResource.ValuesResource.UpdateRequest request = service.Spreadsheets.Values.Update(requestBody, SpreadsheetId, range);
             request.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
-
             var response = request.Execute();
         }
     }

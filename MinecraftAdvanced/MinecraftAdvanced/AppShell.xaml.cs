@@ -1,5 +1,4 @@
-﻿using MinecraftAdvanced.ViewModels;
-using MinecraftAdvanced.Views;
+﻿using MinecraftAdvanced.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;

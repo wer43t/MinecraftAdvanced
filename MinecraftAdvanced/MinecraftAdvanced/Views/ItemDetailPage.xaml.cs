@@ -1,5 +1,4 @@
-﻿using MinecraftAdvanced.ViewModels;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace MinecraftAdvanced.Views
@@ -9,7 +8,6 @@ namespace MinecraftAdvanced.Views
         public ItemDetailPage()
         {
             InitializeComponent();
-            BindingContext = new ItemDetailViewModel();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using MinecraftAdvanced.Models;
-using MinecraftAdvanced.ViewModels;
 using MinecraftAdvanced.Views;
 using System;
 using System.Collections.Generic;
