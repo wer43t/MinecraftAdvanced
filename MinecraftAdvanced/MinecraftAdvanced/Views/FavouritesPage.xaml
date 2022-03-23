@@ -5,7 +5,9 @@
              Title="Избранное">
   <!--Pages can be added as references or inline-->
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Favourites}" HasUnevenRows="True">
+        <ListView ItemsSource="{Binding Favourites}" 
+                  HasUnevenRows="True"
+                  ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

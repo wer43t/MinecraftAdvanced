@@ -21,5 +21,12 @@ namespace MinecraftAdvanced.Views
             InitializeComponent();
             BindingContext = this;
         }
+
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = (sender as ListView).SelectedItem as FavouriteItem;
+
+            await Navigation.PushAsync(new SelectedItemPage(item));
+        }
     }
 }
