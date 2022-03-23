@@ -18,33 +18,32 @@ namespace MinecraftAdvanced.Views
         public MainPage()
         {
             InitializeComponent();
-
-            Buildings = App.DataStorage["постройки"].GetRange(0, 4);
+            Buildings = new List<Item>();
             FillTops();
 
             this.BindingContext = this;
         }
         public void FillTops()
         {
-            foreach (var building in Buildings)
-            {
-                MapsLayout.Children.Add(new Image() { Source = building.Image });
-            }
-            foreach (var building in Buildings)
-            {
-                BuildingsLayout.Children.Add(new Image() { Source = building.Image });
-            }
-            foreach (var building in Buildings)
-            {
-                AddonsLayout.Children.Add(new Image() { Source = building.Image });
-            }
-            foreach (var building in Buildings)
-            {
-                TexturesLayout.Children.Add(new Image() { Source = building.Image });
-            }
-            foreach (var building in Buildings)
-            {
-                SkinsLayout.Children.Add(new Image() { Source = building.Image });
+            var maps = App.DataStorage["карты"];
+            var buildings = App.DataStorage["постройки"];
+            var addons = App.DataStorage["аддоны"];
+            var textures = App.DataStorage["текстуры"];
+            var seeds = App.DataStorage["сиды"];
+
+            Buildings.Add(maps[5]);
+            Buildings.Add(buildings[5]);
+            Buildings.Add(addons[5]);
+            Buildings.Add(textures[5]);
+            Buildings.Add(seeds[5]);
+
+            for (int i = 0; i < 5; i++)
+            { 
+                MapsLayout.Children.Add(new Image() { Source = maps[i].Image });
+                BuildingsLayout.Children.Add(new Image() { Source = buildings[i].Image });
+                AddonsLayout.Children.Add(new Image() { Source = addons[i].Image });
+                TexturesLayout.Children.Add(new Image() { Source = textures[i].Image });
+                SeedsLayout.Children.Add(new Image() { Source = seeds[i].Image });
             }
         }
 
