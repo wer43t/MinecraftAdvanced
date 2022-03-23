@@ -19,5 +19,10 @@ namespace MinecraftAdvanced
         {
             await Navigation.PushAsync(new FavouritesPage());
         }
+
+        private async void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SelectTypePage((sender as MenuItem).Text.ToLower()));
+        }
     }
 }
