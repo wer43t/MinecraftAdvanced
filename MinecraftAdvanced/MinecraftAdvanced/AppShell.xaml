@@ -93,12 +93,12 @@
     <MenuItem Text="Избранное" Clicked="FavouritesClicked"/>
     <MenuItem Text="Категории" />
 
-    <MenuItem Text="Карты" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
-    <MenuItem Text="Аддоны" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
-    <MenuItem Text="Текстуры" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
-    <MenuItem Text="Постройки" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
-    <MenuItem Text="Скины" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
-    <MenuItem Text="Сиды" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Карты" Icon="icon_map.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Аддоны" Icon="icon_addon.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Текстуры" Icon="icon_texture.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Постройки" Icon="icon_building.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Скины" Icon="icon_skin.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Сиды" Icon="icon_seed.png" Clicked="MenuItem_Clicked"/>
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 
     <!--
