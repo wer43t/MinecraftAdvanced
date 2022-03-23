@@ -89,11 +89,8 @@
     <FlyoutItem Title="Главная" Icon="icon_about.png" >
         <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Избранное" Icon="icon_about.png">
-        <ShellContent Route="FavouritesPage" ContentTemplate="{DataTemplate local:FavouritesPage}"/>
-    </FlyoutItem>
 
-    <MenuItem Text="Избранное" Clicked="OnMenuItemClicked"/>
+    <MenuItem Text="Избранное" Clicked="FavouritesClicked"/>
     <MenuItem Text="Категории" />
 
     <MenuItem Text="Карты" Icon="icon_feed.png" Clicked="MenuItem_Clicked"/>

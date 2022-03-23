@@ -12,17 +12,24 @@ namespace MinecraftAdvanced
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
-            Routing.RegisterRoute(nameof(FavouritesPage), typeof(FavouritesPage));
         }
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
+        private async void FavouritesClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FavouritesPage());
+            Shell.Current.FlyoutIsPresented = false;
         }
 
         private async void MenuItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SelectTypePage((sender as MenuItem).Text.ToLower()));
+            Shell.Current.FlyoutIsPresented = false;
+        }
+
+        private async void MainClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+            Shell.Current.FlyoutIsPresented = false;
         }
     }
 }
