@@ -3,6 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:MinecraftAdvanced.Views"
        Title="MinecraftAdvanced"
+       Shell.TabBarIsVisible="False"
        x:Class="MinecraftAdvanced.AppShell">
     <Shell.Resources>
         <ResourceDictionary>
@@ -12,7 +13,7 @@
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#7DCA64" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
@@ -21,7 +22,7 @@
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
 
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Primary}"></Setter>
             </Style>
             <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
                 <Setter Property="VisualStateManager.VisualStateGroups">
@@ -30,12 +31,12 @@
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#7DCA64" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="White" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -71,13 +72,10 @@
 
         </StackLayout>
     </Shell.FlyoutHeader>
-
-    <FlyoutItem Title="Главная" Icon="icon_about.png" >
-        <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="MainPage" Icon="icon_about" Title="Главная" ContentTemplate="{DataTemplate local:MainPage}"/>
+        <ShellContent Route="FavouritesPage" Icon="icon_favorite" Title="Избранное" ContentTemplate="{DataTemplate local:FavouritesPage}"/>
     </FlyoutItem>
-
-    <MenuItem Text="Избранное" Icon="icon_favorite" Clicked="FavouritesClicked"/>
-    <MenuItem Text="Категории"/>
 
     <MenuItem Text="Карты" Icon="icon_map.png" Clicked="MenuItem_Clicked"/>
     <MenuItem Text="Аддоны" Icon="icon_addon.png" Clicked="MenuItem_Clicked"/>
