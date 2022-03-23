@@ -90,8 +90,8 @@
         <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
     </FlyoutItem>
 
-    <MenuItem Text="Избранное" Clicked="FavouritesClicked"/>
-    <MenuItem Text="Категории" />
+    <MenuItem Text="Избранное" Icon="icon_favorite" Clicked="FavouritesClicked"/>
+    <MenuItem Text="Категории"/>
 
     <MenuItem Text="Карты" Icon="icon_map.png" Clicked="MenuItem_Clicked"/>
     <MenuItem Text="Аддоны" Icon="icon_addon.png" Clicked="MenuItem_Clicked"/>
