@@ -81,6 +81,6 @@
     <MenuItem Text="Аддоны" Icon="icon_addon.png" Clicked="MenuItem_Clicked"/>
     <MenuItem Text="Текстуры" Icon="icon_texture.png" Clicked="MenuItem_Clicked"/>
     <MenuItem Text="Постройки" Icon="icon_building.png" Clicked="MenuItem_Clicked"/>
-    <MenuItem Text="Скины" Icon="icon_skin.png" Clicked="MenuItem_Clicked"/>
+    <MenuItem Text="Скины" Icon="icon_skin.png"/>
     <MenuItem Text="Сиды" Icon="icon_seed.png" Clicked="MenuItem_Clicked"/>
 </Shell>

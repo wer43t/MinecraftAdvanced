@@ -14,35 +14,36 @@ using Android.Animation;
 namespace MinecraftAdvanced.Droid
 {
     [Activity(Theme = "@style/Theme.Splash", Label = "Minecraft Advanced", MainLauncher =true, NoHistory =true)]
-    public class SplashActivity : Activity, Animator.IAnimatorListener
+    public class SplashActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Splash_Layout);
+            StartActivity(typeof(MainActivity));
+            //SetContentView(Resource.Layout.Splash_Layout);
 
-            var animationView = FindViewById<LottieAnimationView>(Resource.Id.animation_view);
-            animationView.AddAnimatorListener(this);
+            //var animationView = FindViewById<LottieAnimationView>(Resource.Id.animation_view);
+            //animationView.AddAnimatorListener(this);
         }
-        public void OnAnimationCancel(Animator animation)
-        {
-            throw new NotImplementedException();
-        }
+        //public void OnAnimationCancel(Animator animation)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public void OnAnimationEnd(Animator animation)
-        {
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
-        }
+        //public void OnAnimationEnd(Animator animation)
+        //{
+        //    StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+        //}
 
-        public void OnAnimationRepeat(Animator animation)
-        {
-            throw new NotImplementedException();
-        }
+        //public void OnAnimationRepeat(Animator animation)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public void OnAnimationStart(Animator animation)
-        {
+        //public void OnAnimationStart(Animator animation)
+        //{
             
-        }
+        //}
 
         
     }

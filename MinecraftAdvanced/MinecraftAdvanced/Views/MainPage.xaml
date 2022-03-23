@@ -43,7 +43,7 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Button Text = "Постройки" BackgroundColor="#F25E9F" Clicked="Button_Clicked"/>
-                            <Button Text = "Скины" BackgroundColor="#F78C39" Clicked="Button_Clicked"/>
+                            <Button Text = "Скины" BackgroundColor="Black" TextColor="Red" Clicked="Skins_Clicked"/>
                             <Button Text = "Сиды" BackgroundColor="#C0775B" Clicked="Button_Clicked"/>
                         </StackLayout>
                     </StackLayout>

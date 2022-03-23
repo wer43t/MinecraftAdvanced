@@ -64,5 +64,10 @@ namespace MinecraftAdvanced.Views
         {
             await Navigation.PushAsync(new LoginPage());
         }
+
+        private void Skins_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Отказано в доступе", "Страница недоступна", "Закрыть");
+        }
     }
 }

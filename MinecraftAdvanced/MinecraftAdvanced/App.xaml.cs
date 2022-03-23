@@ -18,7 +18,6 @@ namespace MinecraftAdvanced
             {"аддоны",    new List<Item>()},
             {"текстуры",  new List<Item>()},
             {"постройки", new List<Item>()},
-            {"скины",     new List<Item>()},
             {"сиды",      new List<Item>()}
         };
         public static Dictionary<string, string> sheetNames = new Dictionary<string, string>
@@ -27,7 +26,6 @@ namespace MinecraftAdvanced
             {"аддоны",      "mods_catalog"},
             {"текстуры",    "textures_catalog"},
             {"постройки",   "buildings_catalog"},
-            {"скины",       ""},
             {"сиды",        "seeds_catalog"}
         };
         public App()
