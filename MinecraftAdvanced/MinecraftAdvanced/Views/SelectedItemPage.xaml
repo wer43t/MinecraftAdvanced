@@ -24,7 +24,7 @@
             </StackLayout>
 
             <Label Text="{Binding Title}"/>
-            <Button Text="Скачать" BackgroundColor="#AD1B23" TextColor="white" FontSize="36"/>
+            <Button Text="Скачать" BackgroundColor="#AD1B23" TextColor="white" FontSize="36" Clicked="Button_Clicked"/>
             <Label Text="{Binding Description}"/>
         </StackLayout>
     </ContentPage.Content>

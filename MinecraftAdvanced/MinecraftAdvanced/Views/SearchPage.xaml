@@ -2,11 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MinecraftAdvanced.Views.SearchPage">
+    <Shell.TitleView>
+        <SearchBar x:Name="searchBar"
+       Text=""
+       Placeholder="Поиск">
+        </SearchBar>
+    </Shell.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ScrollView Orientation="Horizontal" >
+                <StackLayout >
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text = "Карты" BackgroundColor="#4DAAF4"  Clicked="Button_Clicked" x:Name="mapsBtn"/>
+                        <Button Text = "Аддоны" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
+                        <Button Text = "Текстуры" BackgroundColor="#4DAAF4" Clicked="Button_Clicked" />
+                        <Button Text = "Постройки" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
+                        <Button Text = "Скины" BackgroundColor="Black" TextColor="#4DAAF4" Clicked="Button_Clicked_1"/>
+                        <Button Text = "Сиды" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

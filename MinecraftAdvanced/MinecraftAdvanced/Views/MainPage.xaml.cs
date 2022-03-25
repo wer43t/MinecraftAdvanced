@@ -62,7 +62,7 @@ namespace MinecraftAdvanced.Views
 
         private async void SearchBar_Focused(object sender, FocusEventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new SearchPage());
         }
 
         private void Skins_Clicked(object sender, EventArgs e)

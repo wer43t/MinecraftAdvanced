@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MinecraftAdvanced.Models;
+using Xamarin.Essentials;
 
 namespace MinecraftAdvanced.Views
 {
@@ -65,6 +66,11 @@ namespace MinecraftAdvanced.Views
             //    App.Database.DeleteFavourite(project);
             //    iconFavourite.IconImageSource = new FontImageSource() { Glyph = "\ue83a", Color = Color.White, FontFamily = "MaterialIconsFont" };
             //}
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Launcher.OpenAsync(new Uri(SelectedItem.DownloadUrl));
         }
     }
 }
