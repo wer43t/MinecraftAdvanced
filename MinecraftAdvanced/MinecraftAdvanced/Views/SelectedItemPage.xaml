@@ -5,27 +5,28 @@
              Title="{Binding Title}"
              Visual="Material">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding ImagePath}" Aspect="AspectFill" HeightRequest="200"/>
+                <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="0,-30,20,0" >
+                    <Button x:Name="btnLike"
+                            Text="&#xe87e;" 
+                            FontFamily="IconsFont" 
+                            TextColor="white" 
+                            FontSize="30"
+                            BackgroundColor="#3CC85B" 
+                            CornerRadius="50" 
+                            WidthRequest="50"
+                            BorderWidth="3"
+                            Clicked="btnLike_Clicked"/>
+                </StackLayout>
+                <StackLayout Spacing="20" Margin="20,-10,20,20">
+                    <Label Text="{Binding Title}" FontSize="24"/>
+                    <Label Text="{Binding Description}" FontSize="18"/>
+                    <Button Text="Скачать" BackgroundColor="#AD1B23" TextColor="white" FontSize="36" Clicked="Button_Clicked"/>
+                </StackLayout>
             
-            <Image Source="{Binding ImagePath}" Aspect="AspectFill" HeightRequest="200"/>
-            <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="0,-30,20,0" >
-                <Button x:Name="btnLike"
-                        Text="&#xe87e;" 
-                        FontFamily="IconsFont" 
-                        TextColor="white" 
-                        FontSize="30" 
-                        BackgroundColor="#3CC85B" 
-                        CornerRadius="50" 
-                        WidthRequest="50" 
-                        HeightRequest="50"
-                        BorderColor="Red"
-                        BorderWidth="3"
-                        Clicked="btnLike_Clicked"/>
             </StackLayout>
-
-            <Label Text="{Binding Title}"/>
-            <Button Text="Скачать" BackgroundColor="#AD1B23" TextColor="white" FontSize="36" Clicked="Button_Clicked"/>
-            <Label Text="{Binding Description}"/>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
