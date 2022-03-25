@@ -6,12 +6,13 @@
         <SearchBar x:Name="searchBar"
        Text=""
        Placeholder="Поиск"
-                   SearchButtonPressed="searchBar_SearchButtonPressed">
+                   SearchButtonPressed="searchBar_SearchButtonPressed"
+                   TextColor="White">
         </SearchBar>
     </Shell.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <ScrollView Orientation="Horizontal" >
+            <ScrollView Orientation="Horizontal" Margin="5">
                 <StackLayout >
                     <StackLayout Orientation="Horizontal">
                         <Button Text = "карты" BackgroundColor="#4DAAF4"  Clicked="Button_Clicked" x:Name="mapsBtn"/>

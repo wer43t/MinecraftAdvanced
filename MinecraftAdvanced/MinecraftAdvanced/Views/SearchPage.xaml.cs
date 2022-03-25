@@ -20,7 +20,7 @@ namespace MinecraftAdvanced.Views
         {
             InitializeComponent();
             previusBtn = mapsBtn;
-            previusBtn.BackgroundColor = Color.Red;
+            previusBtn.BackgroundColor = Color.FromHex("#5AA660");
             filter = previusBtn.Text;
         }
 
@@ -34,7 +34,8 @@ namespace MinecraftAdvanced.Views
             previusBtn.BackgroundColor = Color.FromHex("#4DAAF4");
             previusBtn = (sender as Button);
             filter = (sender as Button).Text;
-            (sender as Button).BackgroundColor = Color.Red;
+            (sender as Button).BackgroundColor = Color.FromHex("#5AA660");
+            lvItems.ItemsSource = null;
             
         }
 
