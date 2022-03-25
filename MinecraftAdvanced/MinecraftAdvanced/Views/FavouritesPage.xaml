@@ -5,24 +5,26 @@
              Title="Избранное">
   <!--Pages can be added as references or inline-->
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Favourites}" 
+        <ScrollView>
+            <ListView ItemsSource="{Binding Favourites}" 
                   HasUnevenRows="True"
                   ItemSelected="ListView_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Frame>
-                                <StackLayout Padding="0" Margin='-10, 5'>
-                                    <Image Source="{Binding ImagePath}" Aspect="Fill" HeightRequest="200"/>
-                                    <Label Text="{Binding Title}" FontSize="24" HorizontalOptions="StartAndExpand"/>
-                                </StackLayout>
-                            </Frame>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame>
+                                    <StackLayout Padding="0" Margin='-10, 5'>
+                                        <Image Source="{Binding ImagePath}" Aspect="Fill" HeightRequest="200"/>
+                                        <Label Text="{Binding Title}" FontSize="24" HorizontalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
     </ContentPage.Content>
     
 </ContentPage>
