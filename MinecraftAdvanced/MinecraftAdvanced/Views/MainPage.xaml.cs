@@ -10,7 +10,12 @@ namespace MinecraftAdvanced.Views
 {
     public partial class MainPage : ContentPage
     {
-        public List<Item> Buildings { get; set; }
+        public List<Item> Tops { get; set; }
+        public List<Item> TopBuildings { get; set; }
+        public List<Item> TopMaps { get; set; }
+        public List<Item> TopAddons { get; set; }
+        public List<Item> TopTextures { get; set; }
+        public List<Item> TopSeeds { get; set; }
         public List<string> Names { get; set; }
         public GoogleHelper helper = new GoogleHelper();
         public List<Button> Buttons { get; set; }
@@ -18,33 +23,18 @@ namespace MinecraftAdvanced.Views
         public MainPage()
         {
             InitializeComponent();
-            Buildings = new List<Item>();
             FillTops();
 
             this.BindingContext = this;
         }
         public void FillTops()
         {
-            var maps = App.DataStorage["карты"];
-            var buildings = App.DataStorage["постройки"];
-            var addons = App.DataStorage["аддоны"];
-            var textures = App.DataStorage["текстуры"];
-            var seeds = App.DataStorage["сиды"];
-
-            Buildings.Add(maps[5]);
-            Buildings.Add(buildings[5]);
-            Buildings.Add(addons[5]);
-            Buildings.Add(textures[5]);
-            Buildings.Add(seeds[5]);
-
-            for (int i = 0; i < 5; i++)
-            { 
-                MapsLayout.Children.Add(new Image() { Source = maps[i].Image });
-                BuildingsLayout.Children.Add(new Image() { Source = buildings[i].Image });
-                AddonsLayout.Children.Add(new Image() { Source = addons[i].Image });
-                TexturesLayout.Children.Add(new Image() { Source = textures[i].Image });
-                SeedsLayout.Children.Add(new Image() { Source = seeds[i].Image });
-            }
+            TopMaps = App.DataStorage["карты"].GetRange(0,5);
+            TopBuildings = App.DataStorage["постройки"].GetRange(0, 5);
+            TopAddons = App.DataStorage["аддоны"].GetRange(0, 5);
+            TopTextures = App.DataStorage["текстуры"].GetRange(0, 5);
+            TopSeeds = App.DataStorage["сиды"].GetRange(0, 5);
+            Tops = new List<Item> { TopMaps[4], TopBuildings[4], TopAddons[4], TopTextures[4], TopSeeds[4] };
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -68,6 +58,11 @@ namespace MinecraftAdvanced.Views
         private void Skins_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Отказано в доступе", "Страница недоступна", "Закрыть");
+        }
+
+        private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            await Navigation.PushAsync(new SelectedItemPage((sender as CollectionView).SelectedItem as Item));
         }
     }
 }

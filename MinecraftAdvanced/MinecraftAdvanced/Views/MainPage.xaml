@@ -16,7 +16,7 @@
         <ScrollView>
             <StackLayout>
                 <StackLayout Padding="0, 0, 0, 10">
-                    <CarouselView ItemsSource="{Binding Buildings}" HeightRequest="150" WidthRequest="150" IndicatorView="indicatorView">
+                    <CarouselView ItemsSource="{Binding Tops}" HeightRequest="150" WidthRequest="150" IndicatorView="indicatorView">
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>
@@ -47,7 +47,6 @@
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
-                
                 <StackLayout>
                     <ContentView HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal">
@@ -59,9 +58,19 @@
                             </Label>
                         </StackLayout>
                     </ContentView>
-                    <ScrollView Orientation="Horizontal">
-                        <FlexLayout x:Name="MapsLayout"/>
-                    </ScrollView>
+                    <CollectionView ItemsLayout="HorizontalList"  ItemsSource="{Binding TopMaps}" HeightRequest="150"
+                                    SelectionMode="Single"
+                                    SelectionChanged="CollectionView_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="300">
+                                    </Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
                 </StackLayout>
                 
                 <StackLayout>
@@ -75,9 +84,19 @@
                             </Label>
                         </StackLayout>
                     </ContentView>
-                    <ScrollView Orientation="Horizontal">
-                        <FlexLayout x:Name="BuildingsLayout"/>
-                    </ScrollView>
+                    <CollectionView ItemsLayout="HorizontalList"  ItemsSource="{Binding TopBuildings}" HeightRequest="150"
+                                    SelectionMode="Single"
+                                    SelectionChanged="CollectionView_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="300">
+                                    </Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
                 </StackLayout>
                 
                 <StackLayout>
@@ -91,9 +110,19 @@
                             </Label>
                         </StackLayout>
                     </ContentView>
-                    <ScrollView Orientation="Horizontal">
-                        <FlexLayout x:Name="AddonsLayout"/>
-                    </ScrollView>
+                    <CollectionView ItemsLayout="HorizontalList"  ItemsSource="{Binding TopAddons}" HeightRequest="150"
+                                    SelectionMode="Single"
+                                    SelectionChanged="CollectionView_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="300">
+                                    </Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
                 </StackLayout>
                 
                 <StackLayout>
@@ -107,10 +136,21 @@
                             </Label>
                         </StackLayout>
                     </ContentView>
-                    <ScrollView Orientation="Horizontal">
-                        <FlexLayout x:Name="TexturesLayout"/>
-                    </ScrollView>
+                    <CollectionView ItemsLayout="HorizontalList"  ItemsSource="{Binding TopTextures}" HeightRequest="150"
+                                    SelectionMode="Single"
+                                    SelectionChanged="CollectionView_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="300">
+                                    </Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
                 </StackLayout>
+                
                 <StackLayout>
                     <ContentView HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal">
@@ -122,9 +162,19 @@
                             </Label>
                         </StackLayout>
                     </ContentView>
-                    <ScrollView Orientation="Horizontal">
-                        <FlexLayout x:Name="SeedsLayout"/>
-                    </ScrollView>
+                    <CollectionView ItemsLayout="HorizontalList"  ItemsSource="{Binding TopSeeds}" HeightRequest="150"
+                                    SelectionMode="Single"
+                                    SelectionChanged="CollectionView_SelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="300">
+                                    </Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
