@@ -5,7 +5,8 @@
     <Shell.TitleView>
         <SearchBar x:Name="searchBar"
        Text=""
-       Placeholder="Поиск">
+       Placeholder="Поиск"
+                   SearchButtonPressed="searchBar_SearchButtonPressed">
         </SearchBar>
     </Shell.TitleView>
     <ContentPage.Content>
@@ -13,15 +14,33 @@
             <ScrollView Orientation="Horizontal" >
                 <StackLayout >
                     <StackLayout Orientation="Horizontal">
-                        <Button Text = "Карты" BackgroundColor="#4DAAF4"  Clicked="Button_Clicked" x:Name="mapsBtn"/>
-                        <Button Text = "Аддоны" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
-                        <Button Text = "Текстуры" BackgroundColor="#4DAAF4" Clicked="Button_Clicked" />
-                        <Button Text = "Постройки" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
-                        <Button Text = "Скины" BackgroundColor="Black" TextColor="#4DAAF4" Clicked="Button_Clicked_1"/>
-                        <Button Text = "Сиды" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
+                        <Button Text = "карты" BackgroundColor="#4DAAF4"  Clicked="Button_Clicked" x:Name="mapsBtn"/>
+                        <Button Text = "аддоны" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
+                        <Button Text = "текстуры" BackgroundColor="#4DAAF4" Clicked="Button_Clicked" />
+                        <Button Text = "постройки" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
+                        <Button Text = "скины" BackgroundColor="Black" TextColor="#4DAAF4" Clicked="Button_Clicked_1"/>
+                        <Button Text = "сиды" BackgroundColor="#4DAAF4" Clicked="Button_Clicked"/>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
+            <StackLayout>
+                    <ListView ItemsSource="{Binding Items}" x:Name="lvItems" HasUnevenRows="True" ItemSelected="lvItems_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Frame>
+                                            <StackLayout Padding="0" Margin='-10, 5'>
+                                                <Image Source="{Binding ImagePath}" Aspect="Fill" HeightRequest="200"/>
+                                                <Label Text="{Binding Title}" FontSize="24" HorizontalOptions="StartAndExpand"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
